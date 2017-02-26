@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <center>
+      <h1><%= title %></h1>
+      <p>Welcome to <%= title %></p>
+      <p style="color:red; font-style:bold;"><%= notification %></p>
+      <form action="/users/userAuth" method="post">
+        <table>
+          <tr>
+            <td>Username</td>
+            <td></td>
+            <td><input type="text" name="username"/></td>
+          </tr>
+          <tr>
+            <td>Password</td>
+            <td></td>
+            <td><input type="password" name="password"/></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td><input type="submit" name="submit" value="Login"/></td>
+          </tr>
+        </table>
+      </form>
+    </center>
+  </body>
+</html>

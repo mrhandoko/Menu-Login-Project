@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Register Page</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <form action="/users/update/<%= user.id %>" method="post">
+      <div class="container">
+        <p><%= notification %></p>
+        <label><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="username" value="<%= user.username %>" required>
+
+        <label><b>Full Name</b></label>
+        <input type="text" placeholder="Enter Fullname" name="fullname" value="<%= user.fullname %>" required>
+
+        <label><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="email" value="<%= user.email %>" required>
+
+        <label><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="password" value="<%= user.password %>" required>
+
+        <label><b>User Role</b></label>
+        <select name="role">
+          <% roles.forEach(function(role){ %>
+          <% if (role.id === user.RoleId) { %>
+            <option value="<%= role.id %>" selected="selected"><%= role.role_name %></option>
+          <% } else { %>
+            <option value="<%= role.id %>"><%= role.role_name %></option>
+          <% } %>
+          <% }) %>
+        </select>
+
+        <input type="checkbox" checked="checked"> Remember me
+        <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+
+        <div class="clearfix">
+          <button type="submit" class="signupbtn">Sign Up</button>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>
